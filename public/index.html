@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Backbone app</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Notes</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Todo</th>
+					<th>Description</th>
+					<th>Additional</th>
+					<th>Action</th>
+				</tr>
+				<tr>
+					<td><input class="form-control todo-input"></td>
+					<td><input class="form-control description-input"></td>
+					<td><input class="form-control additional-input"></td>
+					<td><button class="btn btn-primary add-note" onclick="addNote()">Add</button></td>
+				</tr>
+			</thead>
+			<tbody id="list-note"></tbody>
+		</table>
+	</div>
+	<script type="text/template" id="template-note">
+		<td><span class="todo"><%= todo %></span></td>
+		<td><span class="description"><%= description %></span></td>
+		<td><span class="additional"><%= additional %></span></td>
+		<td>
+			<button class="btn btn-warning edit-note">Edit</button>
+			<button class="btn btn-danger delete-note">Delete</button>
+		</td>
+	</script>
+	<script type="text/template" id="template-edit-note">
+		<td><input class="form-control todo-edit-input" value="<%= todo %>"></td>
+		<td><input class="form-control description-edit-input" value="<%= description %>"></td>
+		<td><input class="form-control additional-edit-input" value="<%= additional %>"></td>
+		<td>
+			<button class="btn btn-success update-note">Update</button>
+			<button class="btn btn-basic cancel-note">Cancel</button>
+		</td>
+	</script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/underscore/underscore.js"></script>
+	<script src="bower_components/backbone/backbone.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
